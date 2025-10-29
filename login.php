@@ -5,13 +5,10 @@ session_start();
 $valid_username = "admin";
 $valid_password = "admin";
 
-// If the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get the username and password from the form
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Check if the username and password are correct
     if ($username === $valid_username && $password === $valid_password) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
